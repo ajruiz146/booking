@@ -10,7 +10,6 @@
     </parent>
 
     <artifactId>booking-infrastructure-adapter-kafka</artifactId>
-    <packaging>pom</packaging>
     <name>booking-infrastructure-adapter-kafka</name>
     <description>Booking Infrastructure Adapter Kafka</description>
 

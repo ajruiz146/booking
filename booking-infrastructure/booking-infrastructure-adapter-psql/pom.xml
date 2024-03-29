@@ -10,9 +10,9 @@
     </parent>
 
     <artifactId>booking-infrastructure-adapter-psql</artifactId>
-    <packaging>pom</packaging>
     <name>booking-infrastructure-adapter-psql</name>
     <description>Booking Infrastructure Adapter PostgreSQL</description>
+
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>

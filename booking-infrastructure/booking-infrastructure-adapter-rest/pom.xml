@@ -10,7 +10,6 @@
     </parent>
 
     <artifactId>booking-infrastructure-adapter-rest</artifactId>
-    <packaging>pom</packaging>
     <name>booking-infrastructure-adapter-rest</name>
     <description>Booking Infrastructure Adapter Rest</description>
 

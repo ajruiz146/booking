@@ -10,7 +10,6 @@
     </parent>
 
     <artifactId>booking-domain</artifactId>
-    <packaging>pom</packaging>
     <name>booking-domain</name>
     <description>Booking Domain</description>
 

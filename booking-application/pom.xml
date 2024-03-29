@@ -10,7 +10,6 @@
     </parent>
 
     <artifactId>booking-application</artifactId>
-    <packaging>pom</packaging>
     <name>booking-application</name>
     <description>Booking Application</description>
 
