@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: booking
+  webflux:
+    base-path: /booking-api
+  kafka:
+    topic:
+      bookings: topic-bookings
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+server:
+  port: 0
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
