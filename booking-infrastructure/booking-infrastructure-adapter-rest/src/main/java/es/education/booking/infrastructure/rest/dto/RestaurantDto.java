@@ -9,12 +9,7 @@ import java.util.UUID;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookingDto {
-    private UUID bookingId;
+public class RestaurantDto {
     private UUID restaurantId;
-    private UUID tableId;
-    private UUID timeZoneId;
     private String name;
-    private String email;
-    private int dinnersNumber;
 }

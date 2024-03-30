@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <spring-boot.version>3.2.4</spring-boot.version>
-        <spring-cloud.version>4.1.0</spring-cloud.version>
+        <spring-cloud.version>4.1.1</spring-cloud.version>
         <lombok.version>1.18.32</lombok.version>
     </properties>
 

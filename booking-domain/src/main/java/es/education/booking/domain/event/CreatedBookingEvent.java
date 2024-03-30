@@ -9,6 +9,6 @@ import java.util.UUID;
 @Getter
 @ToString
 @AllArgsConstructor
-public class CreatedBookingEvent extends Event {
+public class CreatedBookingEvent implements Event {
     private final UUID bookingId;
 }

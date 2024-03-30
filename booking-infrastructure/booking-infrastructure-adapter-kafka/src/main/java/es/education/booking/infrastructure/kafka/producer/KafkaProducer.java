@@ -2,19 +2,16 @@ package es.education.booking.infrastructure.kafka.producer;
 
 import es.education.booking.domain.event.Event;
 import es.education.booking.domain.port.out.Producer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 public class KafkaProducer implements Producer {
-
-    private final static Logger log = LoggerFactory.getLogger(KafkaProducer.class);
 
     private final String topicBookings;
 
@@ -27,7 +24,7 @@ public class KafkaProducer implements Producer {
     }
 
     public void sendMessage(Event payload) {
-        log.info(String.format("Sending message to %s Topic:: %s", topicBookings, payload));
+        log.info("Sending message to {} Topic:: {}", topicBookings, payload);
         kafkaTemplate.send(topicBookings, MessageBuilder.withPayload(payload).build());
     }
 }

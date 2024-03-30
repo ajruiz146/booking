@@ -51,6 +51,11 @@
             <artifactId>booking-infrastructure-adapter-eureka</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>booking-infrastructure-adapter-psql</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
