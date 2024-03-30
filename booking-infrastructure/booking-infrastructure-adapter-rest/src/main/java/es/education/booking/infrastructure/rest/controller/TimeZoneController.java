@@ -28,11 +28,13 @@ public class TimeZoneController {
 
     @GetMapping(path = "/table/{tableId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Flux<TimeZoneDto> getTimeZonesByTableId(@PathVariable("tableId") final UUID tableId) {
+        log.info("Receive request:: getTimeZonesByTableId");
         return service.findAllByTableId(TableId.of(tableId)).map(mapper::toDto);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<TimeZoneDto> createTimeZone(@RequestBody final TimeZoneDto dto) {
+        log.info("Receive request:: createTimeZone body:: {}", dto);
         final TimeZone timeZone = mapper.toDomain(dto);
         return service.create(timeZone).map(mapper::toDto);
     }

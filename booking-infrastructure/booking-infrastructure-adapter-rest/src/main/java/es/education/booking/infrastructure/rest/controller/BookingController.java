@@ -25,14 +25,14 @@ public class BookingController {
 
     @GetMapping(path = "/{bookingId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<BookingDto> getBooking(@PathVariable("bookingId") final UUID bookingId) {
-        log.info("Receive request with bookingId:: {}", bookingId);
+        log.info("Receive request:: getBooking pathVariable:: {}", bookingId);
         return this.service.findById(bookingId).map(mapper::toDto);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<BookingDto> createBooking(@RequestBody final BookingDto requestDto) {
-        log.info("Receive request with booking:: {}", requestDto);
-        final Booking booking = mapper.toDomain(requestDto);
+    public Mono<BookingDto> createBooking(@RequestBody final BookingDto dto) {
+        log.info("Receive request:: createBooking body:: {}", dto);
+        final Booking booking = mapper.toDomain(dto);
         return this.service.create(booking).map(mapper::toDto);
     }
 }

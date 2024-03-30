@@ -24,11 +24,13 @@ public class TableController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Flux<TableDto> getTables() {
+        log.info("Receive request:: getTables");
         return service.findAll().map(mapper::toDto);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<TableDto> createTable(@RequestBody final TableDto dto) {
+        log.info("Receive request:: createTable body:: {}", dto);
         final Table table = mapper.toDomain(dto);
         return service.create(table).map(mapper::toDto);
     }

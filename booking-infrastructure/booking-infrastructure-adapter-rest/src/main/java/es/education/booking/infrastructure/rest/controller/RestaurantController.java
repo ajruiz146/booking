@@ -25,12 +25,14 @@ public class RestaurantController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Flux<RestaurantDto> getRestaurant() {
+        log.info("Receive request:: getRestaurant");
         return service.findAll().map(mapper::toDto);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<RestaurantDto> createRestaurant(@RequestBody final RestaurantDto restaurantDto) {
-        final Restaurant restaurant = mapper.toDomain(restaurantDto);
+    public Mono<RestaurantDto> createRestaurant(@RequestBody final RestaurantDto dto) {
+        log.info("Receive request:: createRestaurant body:: {}", dto);
+        final Restaurant restaurant = mapper.toDomain(dto);
         return service.create(restaurant).map(mapper::toDto);
     }
 }
